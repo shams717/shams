@@ -18,9 +18,10 @@ jobs:
       with:
         python-version: '3.8'
 
-    - name: List files in the directory
+    - name: Mask client_id and client_secret
       run: |
-        ls -R
+        echo "::add-mask::12334141414"
+        echo "::add-mask::r!3123asdz"
 
     - name: Install dependencies
       run: |
