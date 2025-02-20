@@ -18,10 +18,12 @@ jobs:
       with:
         python-version: '3.8'
 
-    - name: Mask client_id and client_secret
+    - name: Extract and mask client_id and client_secret
       run: |
-        echo "::add-mask::12334141414"
-        echo "::add-mask::r!3123asdz"
+        client_id=$(grep 'client_id' src/hello_world.py | cut -d '"' -f 2)
+        client_secret=$(grep 'client_secret' src/hello_world.py | cut -d '"' -f 2)
+        echo "::add-mask::$client_id"
+        echo "::add-mask::$client_secret"
 
     - name: Install dependencies
       run: |
