@@ -1,3 +1,5 @@
-# Contents of the file: /my-python-project/my-python-project/src/hello_world.py
+client_id = "12334141414"
+client_secret = "r!3123asdz"
 
-print("Hello, World!")
+print(f"client_id={client_id}")
+print(f"client_secret={client_secret}")
